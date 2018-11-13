@@ -1,0 +1,269 @@
+body {
+	background-color: #fafafa !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	font-size: 14px !important;
+	font-family: "Open Sans",sans-serif !important;
+	height: 100%;
+}
+
+.img-logo {
+	border-radius: 2px;
+	text-align: center;
+	width: 80px;
+	height: 60px;
+}
+
+.panels {
+	width: 100%;
+	height: 100%;
+	margin-top: 2px;
+	overflow: hidden;
+	background-color: #fafafa;
+	position:relative;
+}
+
+.slidebar {
+	float: left;
+	background-color: #111;
+	position: absolute;
+	z-index: 99;
+}
+.slidebar ul {
+	position:relative;
+	height:100%;
+	margin-bottom: 0 !important;
+}
+
+.slidebar a{
+	color: #bbb;
+	text-decoration:none;
+}
+.slidebar li{
+	text-align:center;
+	padding: 0px 0px;
+	border-bottom: 1px solid #bbb;
+	background: #9343be1c;
+}
+
+ul {
+	padding: 0;
+	margin:0;
+}
+li {
+	list-style-type: none;
+	margin: 0;
+	position: relative;
+	text-align:center;
+	color:#B3B3B3
+}
+.slidebar i {
+  display:block;
+  text-align:center;
+  color:#B3B3B3;
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.slidebar ul a {
+	color:#B3B3B3;
+	text-decoration: none;
+	box-sizing:border-box;
+	display: block;
+	text-transform: capitalize;
+	padding: 20px;
+	-webkit-transform: scale(1);
+	-webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, .2, 1);
+}
+.slidebar ul a:hover{
+	-webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, .2, 1);
+}
+.slidebar li:hover a, li#active{
+	background-color: #1f78cb96;
+}
+.slidebar li:hover i, li#active i{
+	color: #c6e8fd;
+}
+.slidebar li:focus i {
+	color: #c6e8fd;
+}
+
+.main {
+	float: left;
+	width: 100%;
+	background-color: #fafafa;
+	position: relative;
+}
+
+.main h2 {
+	margin: 1em 0;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 22px;
+	font-weight:600;
+	border-bottom: 1px solid #9343be70;
+	padding: 0 0 20px 0;
+}
+
+hr {
+	border-top: 1px solid #9343be70 !important;
+}
+
+/* ========================
+	       USUARIOS 
+   ======================== */
+
+/* ------------------ */
+/*     Panel Home     */
+/* ------------------ */
+
+#panelHome {
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+
+#panelHome li {
+	position: relative;
+	margin-left: 10%;
+	text-align: left !important;
+	list-style-type: circle;
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.img-home {
+	border-radius: 2px;
+	text-align: center;
+	box-shadow: 2px 3px 4px rgba(41, 51, 57, .5);
+}
+
+.img-background {
+	background: url("../img/red.jpg") no-repeat;
+	background-size: cover;
+	color: white !important;
+	border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	-moz-border-radius: 2px;
+	padding-top: 65px !important;
+	padding-bottom: 200px !important;
+	box-shadow: 1px 2px 4px rgba(41, 51, 57, 0.8);
+}
+
+#padelmunecos {
+	box-shadow: none;
+}
+
+/* ----------------------- */
+/*     Panel Servicios     */
+/* ----------------------- */
+.img-servicios {
+	border-radius: 2px;
+	text-align: center;
+	box-shadow: 2px 3px 4px rgba(41, 51, 57, .5);
+	width: 230px !important;
+	height: 150px !important;
+}
+
+.table-services {
+	margin-top: 20px !important;
+}
+
+/* ----------------------- */
+/*   Panel Instalaciones   */
+/* ----------------------- */
+
+.section-table {
+	display: table;
+	margin: 0 auto;
+	border-radius: 6px;
+	width: 100%;
+	padding: 10px 0 0 15px;
+}
+
+.section-table li {
+	position: relative;
+	margin-left: 10%;
+	text-align: left !important;
+	list-style-type: circle;
+	color: rgba(0, 0, 0, 0.6) !important;
+}
+/* ------------------- */
+/*     Panel login     */
+/* ------------------- */
+
+#boton_login{
+	margin: 1em 30px;
+}
+
+.form-horizontal{
+	margin: 1em 50% 1em 45px;
+}
+
+#panel_login input{
+	font-size: 14px;
+}
+
+#panel_login label{
+	font-size: 16px;
+}
+
+#icon_login{
+	margin-right: 5px;
+}
+
+#crear_cuenta{
+	display: inline;
+    font-size: 16px;
+    cursor: pointer;
+    color: #337ab7;
+}
+
+#crear_cuenta:hover{
+	border-bottom: 1px solid #00bfa5;
+}
+
+.error {
+	border: #f00 solid 1px !important;
+    -webkit-box-shadow: 0px 2px 30px 0px rgba(255,0,0,0.7) !important;
+    -moz-box-shadow: 0px 2px 30px 0px rgba(255,0,0,0.7) !important;
+    box-shadow: 0px 2px 10px 0px rgba(255,0,0,0.7) !important;
+}
+
+/* ------------------- */
+/*    Panel registro   */
+/* ------------------- */
+
+
+#panel_registro input{
+	font-size: 14px;
+}
+
+#panel_registro label{
+	font-size: 16px;
+}
+
+#boton_nuevo_usuario{
+	margin: 1em 30px;
+}
+
+.form-horizontal_regis{
+	margin: 1em 9% 1em 32px;
+}
+
+#icon_regis{
+	margin-right: 5px;
+}
+
+#volver_login{
+	display: inline;
+    font-size: 16px;
+    cursor: pointer;
+    color: #337ab7;
+}
+
+#volver_login:hover{
+	border-bottom: 1px solid #00bfa5;
+}
+
+#label_sexo{
+	margin-left: 2%;
+}
+
+

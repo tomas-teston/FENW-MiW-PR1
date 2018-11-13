@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cursos padel - UPM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/underscorejs.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Alertas -->
+    <link rel="stylesheet" href="css/alertify.core.css" />
+    <link rel="stylesheet" href="css/alertify.default.css" />
+    <script src="js/alertify/alertify.js" type="text/javascript"></script>
+
+    <!-- Sliderbar -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- Cookies -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+</head>
+<body>
+<div class="menu">
+    <button class="burger burger3"><span></span></button>
+    <div id="menu-logo">
+        <!--<i class="fa fa-graduation-cap"></i>-->
+        <img class="img-logo" src="img/upmlogo.jpg" alt="imagen-raquetas-clases">
+        <h1>Pádel U.P.M!</h1>
+        <p></p>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" class="slidebar">
+        <ul class="sidebar-nav">
+            <li class="tabHome"><a href="" name="panelHome"><i class="fa fa-home"></i>Inicio</a></li>
+            <li class="tabServicios"><a href="" name="panelServicios"><i class="fas fa-table-tennis" aria-hidden="true"></i>Servicios</a></li>
+            <li class="tabInstalaciones"><a href="" name="panelInstalaciones"><i class="far fa-building" aria-hidden="true"></i>Instalaciones</a></li>
+            <li class="tabReservar"><a href="" name="panelReservas"><i class="far fa-calendar-alt" aria-hidden="true"></i>Reservar</a></li>
+            <li class="tabLogin"><a href="" name="panelLogin"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+            <li class="tabLogout"><a href="" name="panelUnlogin"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a></li>
+        </ul>
+    </div>
+</div>
+<div  class="panels">
+    <div class="main">
+        <section id="panelHome">
+            <div class="container">
+                <h2 class="header">Bienvenido</h2>
+                <div class="row">
+                    <div class="jumbotron img-background">
+                        <h1 class="text-justify">Padel U.P.M.</h1>
+                        <p class="text-justify">El club universitario más dinámico del mundo</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h3>Clases</h3>
+                        <hr>
+                        <p class="text-justify">El conjunto de monitores más cualificados se encargará de darte la formación en cuanto a técnica requerida en este deporte.
+                            Las clases prácticas te permitirán interiorizar los movimientos adecuados como si fuesen naturales.</p>
+                        <p class="text-justify">Las clases colectivas convierten las clases en un espacio dinámico en el que jugar se convierte en una actividad placentera y divertida.</p>
+                        <img class="img-home" src="img/raqueta_suelo.jpg" alt="imagen-raquetas-clases">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Entrenamientos</h3>
+                        <hr>
+                        <p class="text-justify">Si te sientes un campeón, de verdad lo eres o simplemente quieres avanzar rápidamente en la técnica que rodea a este deporte
+                            te podemos configurar sesiones de entrenamiento a tu medida con un entrenador personal que se encargará de:</p>
+                        <ul class="text-justify">
+                            <li>Enseñarte la técnica adecuada par mejorar tus golpes.</li>
+                            <li>Enseñarte a combinar la potencia con la técnica.</li>
+                            <li>Mostrarte como mejorar el rendimiento en equipo.</li>
+                            <li>Explicarte como utilizaar la presión de los campeonatos en tu beneficio.</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Campeonatos</h3>
+                        <hr>
+                        <p class="text-justify">El club organiza campeontatos periódicos en los que te puedes divertir al mismo tiempo que mejoras en el deporte.
+                            Tenemos campeonatos de un día, de fin de semana y ligas regulares. Puedes participar en los torneos masculinos, femeninos y mixtos.</p>
+                        <img id="padelmunecos" class="img-home" src="img/padelmuneco.png" alt="imagen-munecos-padel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="panelServicios">
+            <div class="container">
+                <h2 class="header">Servicios:</h2>
+                <p class="text-justify lead"> Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat a, fames tristique vulputate sed imperdiet lobortis eros vivamus volutpat, dui sapien mi tellus viverra primis risus fermentum. Nulla nullam posuere cum est pellentesque imperdiet, proin et tortor eros nibh, sodales senectus felis sed molestie. Suspendisse tristique eu class tincidunt purus mi magna commodo fringilla, fusce penatibus duis blandit dui et proin sociosqu.
+                    Purus ante primis orci netus nulla fermentum, scelerisque turpis vehicula hendrerit. Parturient senectus ultricies purus eros aliquam in himenaeos, sodales scelerisque integer tincidunt libero. Nunc curabitur arcu turpis ultricies porta mattis libero inceptos primis praesent natoque fermentum suscipit felis, nec cum accumsan vestibulum quisque posuere sociis phasellus hac scelerisque dignissim quam integer.</p>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h3>Clases</h3>
+                        <hr>
+                        <img class="img-servicios" src="img/clases.jpg" alt="imagen-clases">
+                        <table class="table table-services">
+                            <thead>
+                            <tr>
+                                <th scope="col">Horas/semana</th>
+                                <th scope="col">Socios</th>
+                                <th scope="col">No socios</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>50€</td>
+                                <td>60€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>70€</td>
+                                <td>80€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>90€</td>
+                                <td>100€</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Competición</h3>
+                        <hr>
+                        <img class="img-servicios" src="img/competicion.jpg" alt="imagen-competicion">
+                        <table class="table table-services">
+                            <thead>
+                            <tr>
+                                <th scope="col">Horas/semana</th>
+                                <th scope="col">Socios</th>
+                                <th scope="col">No socios</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>150€</td>
+                                <td>160€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>170€</td>
+                                <td>180€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>190€</td>
+                                <td>220€</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Alquiler pistas</h3>
+                        <hr>
+                        <img class="img-servicios" src="img/alquiler.png" alt="imagen-alquiler">
+                        <table class="table table-services">
+                            <thead>
+                            <tr>
+                                <th scope="col">Horas</th>
+                                <th scope="col">Socios</th>
+                                <th scope="col">No socios</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>5€</td>
+                                <td>7€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>7€</td>
+                                <td>10€</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>10€</td>
+                                <td>12€</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="panelInstalaciones">
+            <div class="container">
+                <h2 class="header">Instalaciones:</h2>
+                <p class="text-justify lead"> Lorem ipsum dolor sit amet consectetur adipiscing elit feugiat a, fames tristique vulputate sed imperdiet lobortis eros vivamus volutpat, dui sapien mi tellus viverra primis risus fermentum. Nulla nullam posuere cum est pellentesque imperdiet, proin et tortor eros nibh, sodales senectus felis sed molestie. Suspendisse tristique eu class tincidunt purus mi magna commodo fringilla, fusce penatibus duis blandit dui et proin sociosqu.
+                    Purus ante primis orci netus nulla fermentum, scelerisque turpis vehicula hendrerit. Parturient senectus ultricies purus eros aliquam in himenaeos, sodales scelerisque integer tincidunt libero. Nunc curabitur arcu turpis ultricies porta mattis libero inceptos primis praesent natoque fermentum suscipit felis, nec cum accumsan vestibulum quisque posuere sociis phasellus hac scelerisque dignissim quam integer.</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-7">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.9299568748893!2d-3.629890384429269!3d40.388244965295044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225a43c7652a9%3A0xa40c56b8ce452f7a!2sAv.+del+Campus+Sur%2C+28031+Madrid!5e0!3m2!1ses!2ses!4v1541490914418"
+                                        scrolling="no" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="500px" id="gmap_canvas">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5 text-justify  ">
+                        <div class="row table-bordered section-table">
+                            <p>Disponemos de: </p>
+                            <ul>
+                                <li>4 pistas de cristal cubiertas.</li>
+                                <li>3 pistas de cristal semicubiertas.</li>
+                                <li>3 pistas de cemento exteriores.</li>
+                                <li>2 pistas de tenis.</li>
+                                <li>Vestuarios completos.</li>
+                                <li>Cafetería con terraza.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="panelReservas">
+            <div class="container">
+                <h2 class="header">Reservas:</h2>
+            </div>
+        </section>
+
+        <section id="panelLogin">
+            <div class="container">
+                <div id="panel_login">
+                    <h2 class="header">Login:</h2>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="login_usuario" >Usuario: </label>
+                            <input type="text" class="form-control" id="login_usuario">
+                        </div>
+                        <div class="form-group">
+                            <label class="input_password" >Contraseña: </label>
+                            <input type="password" class="form-control" id="password_login">
+                        </div>
+                    </div>
+                    <button id="boton_login" type="submit" class="btn btn-primary"><span id="icon_login" class="glyphicon glyphicon-user"></span>Identificarse</button>
+                    <p id="crear_cuenta">Crear nueva cuenta</p>
+                </div>
+                <div id="panel_registro">
+                    <h2 class="header">Nuevo usuario:</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-horizontal_regis">
+                                <div class="form-group">
+                                    <label class="input_reg_usuario" >*Usuario: </label>
+                                    <input type="text" class="form-control" id="reg_usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label class="input_reg_email" >*Correo: </label>
+                                    <input type="text" class="form-control" id="reg_email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="input_reg_password" >*Contraseña: </label>
+                                    <input type="password" class="form-control" id="reg_password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="input_reg_password" >*Repite contraseña: </label>
+                                    <input type="password" class="form-control" id="reg_password2">
+                                </div>
+                                <div class="form-group">
+                                    <label class="input_reg_fecha_nacimiento" >Fecha_nacimiento: </label>
+                                    <input type="date" class="form-control" id="reg_fecha_nacimiento">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="boton_nuevo_usuario" type="submit" class="btn btn-primary"><span id="icon_regis" class="glyphicon glyphicon-user"></span>Crear nuevo usuario</button>
+                    <p id="volver_login">Volver a login</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center">
+            <hr>
+            <p class="text-muted">Universidad Politécnica de Madrid. 2018</p>
+        </div>
+    </div>
+</footer>
+</html>
