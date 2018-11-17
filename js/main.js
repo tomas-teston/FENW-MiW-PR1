@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     //Cargamos variables globales.
     var tokenId = undefined;
-    var user = undefined;
 
     iniciar();
 
@@ -17,43 +16,46 @@ $(document).ready(function () {
     $('.slidebar a').click(function (event) {
         event.preventDefault();
 
-        //Ocultamos todos los paneles.
-        $('div.main').children('section').hide();
-
         //Coloco el estado del sliderbar en no activo.
         $(".slidebar li").attr("id", "");
 
         //Coloco el estado del sliderbar (el que pulso) en modo activo.
         $(this).parent().attr("id", "active");
 
-        //Muestro el contenido correspondiente.     
-        $('#' + $(this).attr('name')).fadeIn();
+        //Muestro el contenido correspondiente.
+        if (($(this).attr('name') !== "panelUnlogin")) {
+            $('#panel').load("./panels/" + $(this).attr('name') + ".html");
 
-        //En el caso de que sea el panel de login ocultamos el panel de registro y mostramos el login
-        if ($(this).attr('name') === "panelLogin") {
-            panelLogin(true);
-        }
-        else if ($(this).attr('name') === "panelLogout") {
-            iniciar();
-        }
-        else if ($(this).attr('name') === "panelReservas") {
-            alertify.success("Función no implementada");
-            $("a[name='panelHome']").parent().attr("id", "active");
-            panelHome(true);
-        }
+            //En el caso de que sea el panel de login ocultamos el panel de registro y mostramos el login
+            if ($(this).attr('name') === "panelLogin") {
+                panelLogin(true);
+            }
+            else if ($(this).attr('name') === "panelUnlogin") {
+                iniciar();
+            }
+            else if ($(this).attr('name') === "panelReservas") {
+                alertify.success("Función no implementada");
+                $("a[name='panelHome']").parent().attr("id", "active");
+                $('#panel').load("./panels/panelHome.html");
+            }
 
-        $("#wrapper").toggleClass("toggled");
-        $(".burger3").toggleClass("on");
+            $("#wrapper").toggleClass("toggled");
+            $(".burger3").toggleClass("on");
 
-        //Mando el foco al primer input encontrado.
-        $('#' + $(this).attr('name') + " input:first").focus();
+            //Mando el foco al primer input encontrado.
+            $('#' + $(this).attr('name') + " input:first").focus();
+        } else {
+            Cookies.remove('tokenAPI');
+            Cookies.remove('username');
+            window.document.location.href = 'index.html';
+        }
     });
 
     // ========================
     //     LOGIN - USUARIOS
     // ========================
 
-    $("#boton_login").on("click", (event) => {
+    $("#panel").on("click", "#boton_login", (event) => {
         event.preventDefault();
 
         //Recojo el email y password introducidos y compruebo que están rellenos.
@@ -84,33 +86,19 @@ $(document).ready(function () {
         }
     });
 
-    $(".tabLogout").on("click", (event) => {
-        event.preventDefault();
-        Cookies.remove('tokenAPI');
-        Cookies.remove('username');
-        window.document.location.href = 'index.html';
-    });
-
-    $("#crear_cuenta").on("click", function (event) {
+    $("#panel").on("click", "#crear_cuenta", (event) => {
         event.preventDefault();
         mostrarRegis();
     });
 
-    $("#volver_login").on("click", function (event) {
+    $("#panel").on("click", "#volver_login", (event) => {
         event.preventDefault();
         mostrarLogin();
     });
 
-    $("#boton_nuevo_usuario").on("click", function (event) {
+    $("#panel").on("click", "#boton_nuevo_usuario", (event) => {
 
         event.preventDefault();
-        //Recogemos todos los valores y comprobamos que son correctos.
-        var email = $('#reg_email').val();
-        var password = $('#reg_password').val();
-        var sexo = $('#reg_sexo:checked').val();
-        var nombre = $('#reg_nombre').val();
-        var apellidos = $('#reg_apellidos').val();
-        var fecha_nacimiento = $('#reg_fecha_nacimiento').val();
         var mensaje = comprobarRegistro();
         if (mensaje === "") {
             //Realizamos la insercción
@@ -128,11 +116,7 @@ $(document).ready(function () {
     function iniciar() {
         $(".slidebar li:first").attr("id", "active");
 
-        panelHome(false);
-        panelServicios(false);
-        panelInstalaciones(false);
-        panelReservar(false);
-        panelLogin(false);
+        $('#panel').load("./panels/panelHome.html");
 
         tokenId = Cookies.get('tokenAPI');
         if (tokenId !== undefined) {
@@ -148,38 +132,6 @@ $(document).ready(function () {
     /* -_-_-_-_-_-_-_-_-_-_-_ */
     /* MODOS DE VISUALIZACIÓN */
     /* -_-_-_-_-_-_-_-_-_-_-_ */
-
-    function panelHome(mostrar) {
-        if (mostrar) {
-            $('#panelHome').fadeIn();
-        } else {
-            $('#panelHome').hide();
-        }
-    }
-
-    function panelServicios(mostrar) {
-        if (mostrar) {
-            $('#panelServicios').fadeIn();
-        } else {
-            $('#panelServicios').hide();
-        }
-    }
-
-    function panelInstalaciones(mostrar) {
-        if (mostrar) {
-            $('#panelInstalaciones').fadeIn();
-        } else {
-            $('#panelInstalaciones').hide();
-        }
-    }
-
-    function panelReservar(mostrar) {
-        if (mostrar) {
-            $('#panelReservas').fadeIn();
-        } else {
-            $('#panelReservas').hide();
-        }
-    }
 
     function panelLogin(mostrar) {
         if (mostrar) {
