@@ -51,12 +51,21 @@ ul {
 	margin:0;
 }
 li {
+	list-style-type: none;
+	margin: 0;
+	position: relative;
+	text-align:center;
+	color:#B3B3B3
+}
+
+#homeList li {
 	position: relative;
 	margin-left: 10%;
 	text-align: left !important;
 	list-style-type: circle;
 	color: rgba(0, 0, 0, 0.6) !important;
 }
+
 .slidebar i {
   display:block;
   text-align:center;
