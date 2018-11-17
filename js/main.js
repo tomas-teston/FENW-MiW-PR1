@@ -36,6 +36,11 @@ $(document).ready(function () {
         else if ($(this).attr('name') === "panelLogout") {
             iniciar();
         }
+        else if ($(this).attr('name') === "panelReservas") {
+            alertify.success("Función no implementada");
+            $("a[name='panelHome']").parent().attr("id", "active");
+            panelHome(true);
+        }
 
         $("#wrapper").toggleClass("toggled");
         $(".burger3").toggleClass("on");
@@ -58,21 +63,21 @@ $(document).ready(function () {
         if (m_mensaje === "") {
             $.ajax({
                 url: 'http://fenw.etsisi.upm.es:5555/users/login?username='+user+'&password='+pass,
-                async: true,
-                type: 'GET',
-                success: (data, texStatus, request) => {
-                    Cookies.set('tokenAPI', request.getResponseHeader('Authorization'));
-                    Cookies.set('username', user);
-                    window.document.location.href = 'index.html';
-                },
-                error: (jqXHR, textStatus, errorThrown) => {
+                type: 'GET'
+            })
+            .done((data, texStatus, request) => {
+                Cookies.set('tokenAPI', request.getResponseHeader('Authorization'));
+                Cookies.set('username', user);
+                window.document.location.href = 'index.html';
+            })
+            .fail((jqXHR, textStatus, errorThrown) => {
                     if (jqXHR.status === 401) {
                         alertify.error("Usuario y/o contraseña incorrectas");
                     } else {
                         alertify.error(errorThrown);
                     }
                 }
-            });
+            );
         } else {
             $('#login_usuario').focus();
             alertify.error(m_mensaje);
@@ -109,40 +114,7 @@ $(document).ready(function () {
         var mensaje = comprobarRegistro();
         if (mensaje === "") {
             //Realizamos la insercción
-            $.ajax({
-                type: 'POST',
-                url: '/usuarios/insertUser',
-                contentType: "application/json",
-                // Al ser una petición de tipo GET, vamos a tener URLs
-                // de la siguiente forma: /currency?from=USD&to=EUR&quantity=20
-                data:
-                    JSON.stringify({
-                        nombre: nombre,
-                        apellidos: apellidos,
-                        sexo: sexo,
-                        fecha_nacimiento: fecha_nacimiento,
-                        email: email,
-                        password: password
-                    })
-                ,
-
-                // En caso de éxito, mostramos el resultado.
-                success: function (data, textStatus, jqXHR) {
-                    if (data.respuesta === undefined) {
-                        alertify.error("Usuario no encontrado en la BBDD");
-                    } else {
-                        //EJemplo buscar CursoByID -> GET -> getinfobyid
-                        //
-                        alertify.success("Registrado con ID: " + data.id);
-                        mostrarLogin();
-                        //$("#resultadoFrom").text(data.respuesta + ". ID: "+ data.id);
-                    }
-
-                },
-                error: function (jqXHR, statusText, errorThrown) {
-                    alertify.error("Error al insertar un usuario");
-                }
-            });
+            alertify.success("Función de registro no implementada");
         } else {
             alertify.error(mensaje);
         }
@@ -160,11 +132,11 @@ $(document).ready(function () {
         panelServicios(false);
         panelInstalaciones(false);
         panelReservar(false);
+        panelLogin(false);
 
         tokenId = Cookies.get('tokenAPI');
         if (tokenId !== undefined) {
             alertify.success("Bienvenido: " + Cookies.get('username'));
-            mostrarLogin();
             modoLogin();
         } else {
             modoNoLogin();
@@ -244,13 +216,11 @@ $(document).ready(function () {
     }
 
     function modoNoLogin() {
-        panelLogin(false);
         tabLogin(true);
         tabLogout(false);
     }
 
     function modoLogin() {
-        panelLogin(true);
         tabLogin(false);
         tabLogout(true);
     }
