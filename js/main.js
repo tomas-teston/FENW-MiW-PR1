@@ -64,8 +64,10 @@ $(document).ready(function () {
         var m_mensaje = comprobarLogin();
         if (m_mensaje === "") {
             $.ajax({
-                url: 'http://fenw.etsisi.upm.es:5555/users/login?username='+user+'&password='+pass,
-                type: 'GET'
+                url: 'http://fenw.etsisi.upm.es:5555/users/login',
+                type: 'GET',
+                port: 5555,
+                data: {"username": user, "password": pass}
             })
             .done((data, texStatus, request) => {
                 Cookies.set('tokenAPI', request.getResponseHeader('Authorization'));
