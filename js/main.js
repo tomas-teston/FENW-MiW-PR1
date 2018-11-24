@@ -45,8 +45,8 @@ $(document).ready(function () {
             //Mando el foco al primer input encontrado.
             $('#' + $(this).attr('name') + " input:first").focus();
         } else {
-            Cookies.remove('tokenAPI');
-            Cookies.remove('username');
+            sessionStorage.removeItem('tokenAPI')
+            sessionStorage.removeItem('username')
             window.document.location.href = 'index.html';
         }
     });
@@ -70,8 +70,8 @@ $(document).ready(function () {
                 data: {"username": user, "password": pass}
             })
             .done((data, texStatus, request) => {
-                Cookies.set('tokenAPI', request.getResponseHeader('Authorization'));
-                Cookies.set('username', user);
+                sessionStorage.setItem('tokenAPI', request.getResponseHeader('Authorization'));
+                sessionStorage.setItem('username', user);
                 window.document.location.href = 'index.html';
             })
             .fail((jqXHR, textStatus, errorThrown) => {
@@ -120,9 +120,9 @@ $(document).ready(function () {
 
         $('#panel').load("./panels/panelHome.html");
 
-        tokenId = Cookies.get('tokenAPI');
-        if (tokenId !== undefined) {
-            alertify.success("Bienvenido: " + Cookies.get('username'));
+        tokenId = sessionStorage.getItem('tokenAPI');
+        if (tokenId !== null) {
+            alertify.success("Bienvenido: " + sessionStorage.getItem('username'));
             modoLogin();
         } else {
             modoNoLogin();
